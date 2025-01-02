@@ -1,0 +1,7 @@
+{
+  "name": "nextjs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}
