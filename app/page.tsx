@@ -37,7 +37,8 @@ export default function Home() {
           {[
             { title: "Compare Rates", description: "Quickly find the cheapest shipping rates across trusted carriers." },
             { title: "Print Labels", description: "Purchase and print shipping labels directly from the app." },
-            { title: "Drop Locations", description: "Find the nearest drop-off points for your packages with ease." }
+            { title: "Drop Locations", description: "Find the nearest drop-off points for your packages with ease." },
+            
           ].map((feature, index) => (
             <div
               key={index}
