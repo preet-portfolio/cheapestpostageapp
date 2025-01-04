@@ -93,19 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 bg-gray-800 text-white text-center">
-        <p>&copy; {new Date().getFullYear()} Cheapest Postage App. All rights reserved.</p>
-        <p className="mt-2">
-          <a href="/privacy-policy" className="underline">
-            Privacy Policy
-          </a>{" "}
-          |{" "}
-          <a href="/terms" className="underline">
-            Terms of Service
-          </a>
-        </p>
-      </footer>
+      
     </div>
   );
 }
