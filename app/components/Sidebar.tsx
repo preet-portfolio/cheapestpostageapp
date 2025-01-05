@@ -1,66 +1,31 @@
-import { useRouter } from "next/navigation";
+import { useState } from "react";
+import CreateShipment from "./CreateShipment"; // Adjust path if needed
 
 export default function Sidebar() {
-  const router = useRouter();
+  const [activeView, setActiveView] = useState("overview");
 
   return (
-    <div className="h-full bg-gray-800 text-white flex flex-col p-4">
-      {/* Existing Options */}
-      <h2 className="text-xl font-semibold mb-4">Overview</h2>
-      <button
-        onClick={() => router.push("/admin/overview")}
-        className="hover:bg-gray-700 py-2 px-4 rounded-lg text-left"
-      >
-        Overview
-      </button>
-      <button
-        onClick={() => router.push("/admin/settings")}
-        className="hover:bg-gray-700 py-2 px-4 rounded-lg text-left mt-2"
-      >
-        Settings
-      </button>
+    <div className="flex h-screen">
+      {/* Sidebar */}
+      <aside className="w-64 bg-gray-800 text-white h-full p-4">
+        <nav>
+          <ul className="space-y-4">
+            <li>
+              <button
+                onClick={() => setActiveView("create-shipment")}
+                className="block hover:text-gray-400 text-left w-full"
+              >
+                Create Shipment
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-      {/* Separator */}
-      <hr className="border-gray-600 my-4" />
-
-      {/* New Shipment Options */}
-      <h2 className="text-xl font-semibold mb-4">Shipments</h2>
-      <button
-        onClick={() => router.push("/admin/create-shipment")}
-        className="bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-lg text-left text-white font-medium mb-2 transition"
-      >
-        Create Shipment
-      </button>
-      <button
-        onClick={() => router.push("/admin/import-shipment")}
-        className="bg-green-600 hover:bg-green-700 py-2 px-4 rounded-lg text-left text-white font-medium transition"
-      >
-        Import Shipment
-      </button>
-
-      {/* Separator */}
-      <hr className="border-gray-600 my-4" />
-
-      {/* Additional Options */}
-      <h2 className="text-xl font-semibold mb-4">Tools</h2>
-      <button
-        onClick={() => router.push("/admin/view-shipments")}
-        className="hover:bg-gray-700 py-2 px-4 rounded-lg text-left mb-2 transition"
-      >
-        View All Shipments
-      </button>
-      <button
-        onClick={() => router.push("/admin/view-transactions")}
-        className="hover:bg-gray-700 py-2 px-4 rounded-lg text-left mb-2 transition"
-      >
-        View All Transactions
-      </button>
-      <button
-        onClick={() => router.push("/admin/help")}
-        className="hover:bg-gray-700 py-2 px-4 rounded-lg text-left transition"
-      >
-        Help
-      </button>
+      {/* Main Content Area */}
+      <main className="flex-1 bg-gray-100 p-6 overflow-y-auto">
+        {activeView === "create-shipment" && <CreateShipment />}
+      </main>
     </div>
   );
 }

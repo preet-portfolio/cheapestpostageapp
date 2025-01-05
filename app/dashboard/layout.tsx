@@ -26,7 +26,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
             {/* New Shipment Options */}
             <li>
-              <Link href="/dashboard/create-shipment" className="block hover:text-gray-400">
+              <Link href="/components/CreateShipment" className="block hover:text-gray-400">
                 Create Shipment
               </Link>
             </li>

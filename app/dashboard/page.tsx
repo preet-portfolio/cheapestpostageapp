@@ -43,7 +43,9 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gray-100 p-6">
       {/* Dashboard Header */}
       <div className="bg-white shadow-md rounded-lg p-6 mb-8">
-        <h1 className="text-3xl font-extrabold text-gray-800">{getGreeting()}, {user?.firstName || "User"}!</h1>
+        <h1 className="text-3xl font-extrabold text-gray-800">
+          {getGreeting()}, {user?.firstName || "User"}!
+        </h1>
         <p className="mt-2 text-lg text-gray-600">
           Welcome back to your dashboard. Let's explore what's new today.
         </p>
@@ -91,6 +93,42 @@ export default function Dashboard() {
           >
             Get Help
           </button>
+        </div>
+      </div>
+
+      {/* New Section - Extra Interaction */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          Quick Links
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+            <a
+              href="/dashboard/create-shipment"
+              target="_blank"
+              className="block text-blue-600 hover:underline"
+            >
+              Create Shipment
+            </a>
+          </div>
+          <div className="bg-green-50 p-4 rounded-lg hover:bg-green-100 transition">
+            <a
+              href="/dashboard/import-shipment"
+              target="_blank"
+              className="block text-green-600 hover:underline"
+            >
+              Import Shipment
+            </a>
+          </div>
+          <div className="bg-yellow-50 p-4 rounded-lg hover:bg-yellow-100 transition">
+            <a
+              href="/dashboard/view-transactions"
+              target="_blank"
+              className="block text-yellow-600 hover:underline"
+            >
+              View Transactions
+            </a>
+          </div>
         </div>
       </div>
     </div>
